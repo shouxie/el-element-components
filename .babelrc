@@ -5,9 +5,9 @@
     "utils": {
       "plugins": [
         ["module-resolver", {
-          "root": ["dlj-components"],
+          "root": ["element-ui-components"],
           "alias": {
-            "el-element-components/src": "el-element-components/lib"
+            "element-ui-components/src": "element-ui-components/lib"
           }
         }]
       ]

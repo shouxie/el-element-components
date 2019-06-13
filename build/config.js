@@ -6,7 +6,7 @@ const Components = require('../components.json');
 let externals = {};
 
 Object.keys(Components).forEach(function(key) {
-  externals[`el-element-components/packages/${key}`] = `el-element-components/lib/${key}`;
+  externals[`element-ui-components/packages/${key}`] = `element-ui-components/lib/${key}`;
 });
 
 externals = [Object.assign({

@@ -1,5 +1,5 @@
 {
-  "name": "el-element-components",
+  "name": "element-ui-components",
   "version": "0.0.1",
   "description": "components with Element UI for project",
   "main": "./lib/index.js",
