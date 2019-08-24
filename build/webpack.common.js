@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-06-06 15:40:04
- * @LastEditTime: 2019-08-23 15:22:06
+ * @LastEditTime: 2019-08-24 15:11:08
  * @LastEditors: Please set LastEditors
  */
 const path = require('path');
@@ -14,7 +14,7 @@ const config = require('./config');
 module.exports = {
   mode: 'production',
   entry: {
-    app: ['./src/index.ts']
+    app: ['./src/index.js']
   },
   output: {
     path: path.resolve(process.cwd(), './lib'),

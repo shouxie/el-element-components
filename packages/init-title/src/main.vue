@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-06-06 20:03:57
- * @LastEditTime: 2019-08-23 14:48:16
+ * @LastEditTime: 2019-08-24 15:10:38
  * @LastEditors: Please set LastEditors
  -->
 <template>
@@ -19,21 +19,22 @@
         <dd v-if='subTitle' class='dlj-sub-title_explain'>{{subTitle}}</dd>
     </dl>
 </template>
-<script lang='ts'>
-import { Vue, Component, Prop } from "vue-property-decorator";
-@Component
-export default class InitTitle extends Vue {
-    @Prop() subTitle!: String;
-    @Prop() btns!: Object[];
-    static ComponentName = 'InitTitle'
-    // props: {
-    //     subTitle: {
-    //         type: String
-    //     },
-    //     btns: {
-    //         type: Array
-    //     }
-    // }
+<script>
+// import { Vue, Component, Prop } from "vue-property-decorator";
+// @Component
+export default {
+    // @Prop() subTitle!: String;
+    // @Prop() btns!: Object[];
+    // static ComponentName = 'InitTitle'
+    name: 'InitTitle',
+    props: {
+        subTitle: {
+            type: String
+        },
+        btns: {
+            type: Array
+        }
+    }
 }
 </script>
 <style lang="less" scoped>
