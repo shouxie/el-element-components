@@ -1,4 +1,3 @@
 {
-	"initTitle": "./packages/init-title/index.js",
-	"initList": "./packages/init-list/index.js"
+	"initTitle": "./packages/init-title/index.js"
 }

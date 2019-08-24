@@ -1,3 +1,10 @@
+/*
+ * @Description: In User Settings Edit
+ * @Author: your name
+ * @Date: 2019-06-06 15:40:12
+ * @LastEditTime: 2019-08-23 15:08:41
+ * @LastEditors: Please set LastEditors
+ */
 const path = require('path');
 const ProgressBarPlugin = require('progress-bar-webpack-plugin');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
@@ -16,7 +23,7 @@ const webpackConfig = {
     libraryTarget: 'commonjs2'
   },
   resolve: {
-    extensions: ['.js', '.vue', '.json'],
+    extensions: ['.js', '.vue', '.json', '.ts'],
     alias: config.alias,
     modules: ['node_modules']
   },
@@ -88,6 +95,20 @@ const webpackConfig = {
         query: {
           limit: 10000,
           name: path.posix.join('static', '[name].[hash:7].[ext]')
+        }
+      },
+      {
+        test: /\.ts$/,
+        exclude: /node_modules/,
+        enforce: 'pre',
+        loader: 'tslint-loader'
+      },
+      {
+        test: /\.tsx?$/,
+        loader: 'ts-loader',
+        exclude: /node_modules/,
+        options: {
+          appendTsSuffixTo: [/\.vue$/]
         }
       }
     ]

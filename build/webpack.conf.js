@@ -1,3 +1,10 @@
+/*
+ * @Description: In User Settings Edit
+ * @Author: your name
+ * @Date: 2019-06-06 15:40:26
+ * @LastEditTime: 2019-08-23 15:21:44
+ * @LastEditors: Please set LastEditors
+ */
 const path = require('path');
 const ProgressBarPlugin = require('progress-bar-webpack-plugin');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
@@ -8,7 +15,7 @@ const config = require('./config');
 module.exports = {
   mode: 'production',
   entry: {
-    app: ['./src/index.js']
+    app: ['./src/index.ts']
   },
   output: {
     path: path.resolve(process.cwd(), './lib'),
@@ -22,7 +29,7 @@ module.exports = {
     globalObject: 'typeof self !== \'undefined\' ? self : this'
   },
   resolve: {
-    extensions: ['.js', '.vue', '.json'],
+    extensions: ['.js', '.vue', '.json', '.ts'],
     alias: config.alias
   },
   externals: {
@@ -93,6 +100,20 @@ module.exports = {
           compilerOptions: {
             preserveWhitespace: false
           }
+        }
+      },
+      {
+        test: /\.ts$/,
+        exclude: /node_modules/,
+        enforce: 'pre',
+        loader: 'tslint-loader'
+      },
+      {
+        test: /\.tsx?$/,
+        loader: 'ts-loader',
+        exclude: /node_modules/,
+        options: {
+          appendTsSuffixTo: [/\.vue$/]
         }
       }
     ]
